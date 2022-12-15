@@ -9,8 +9,8 @@ pipeline {
     stages {
 
         stage('Clonar repo') {
-            steps {
-
+            steps { 
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/repo-de-aplicacion.git'
             }
         }
 
