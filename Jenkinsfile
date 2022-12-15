@@ -1,10 +1,11 @@
 pipeline {
 
     environment {
+        APP_NAME = "web-de-martin"
 
     }
 
-
+    agent any
   
     stages {
 
@@ -15,24 +16,12 @@ pipeline {
         }
 
 
-        stage('Correr npm install') {
-           steps {  
-
-            }
-        }
+        
 
 
-        stage('Buildear la imagen') {
-            steps {
- 
-            }
-        }
+        
 
-        stage('Pushear imagen a repo personal') {
-            steps {
-
-            }
-        }
+       
 
     }
 }
