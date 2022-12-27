@@ -67,7 +67,12 @@ spec:
 
         stage('docker push') {
             steps {
+                sh 
                 sh "docker push martooo/web-de-martin"
+                sh "docker login -u martooo -p arquitectura123"
+                
+                
+              
             }
         }
 
