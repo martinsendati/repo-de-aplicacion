@@ -65,7 +65,11 @@ spec:
             }
         }
 
-        
+        stage('docker push') {
+            steps {
+                sh "docker push martooo/web-de-martin"
+            }
+        }
 
 
         
