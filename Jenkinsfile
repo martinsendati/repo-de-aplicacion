@@ -58,19 +58,20 @@ spec:
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/repo-de-aplicacion.git'
             }
         }        
-        
-        stage('docker push') {
-            steps {
-                sh "docker push martooo/web-de-martin ."
-                sh "docker login -u martooo -p arquitectura123"
-            }
-        }
-
-        stage('buildear imagen') {
+         stage('buildear imagen') {
             steps {
                 sh "docker build -t martooo/web-de-martin ."
             }
         }
+        stage('docker push') {
+            steps {
+                sh "docker login -u martooo -p arquitectura123"
+                sh "docker push martooo/web-de-martin ."
+                
+            }
+        }
+
+       
         
 
        
