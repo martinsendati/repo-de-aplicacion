@@ -61,7 +61,7 @@ spec:
         
         stage('buildear imagen') {
             steps {
-                sh "docker build -t web-de-martin ."
+                sh "docker build -t martooo/web-de-martin ."
             }
         }
 
