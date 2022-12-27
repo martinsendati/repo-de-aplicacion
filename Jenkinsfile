@@ -57,14 +57,8 @@ spec:
             steps { 
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/repo-de-aplicacion.git'
             }
-        }
+        }        
         
-        stage('buildear imagen') {
-            steps {
-                sh "docker build -t martooo/web-de-martin ."
-            }
-        }
-
         stage('docker push') {
             steps {
                 sh "docker push martooo/web-de-martin ."
@@ -72,7 +66,11 @@ spec:
             }
         }
 
-
+        stage('buildear imagen') {
+            steps {
+                sh "docker build -t martooo/web-de-martin ."
+            }
+        }
         
 
        
