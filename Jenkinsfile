@@ -2,7 +2,7 @@ pipeline {
 
     environment {
         APP_NAME = "web-de-martin"
-
+        APP_TAG = "${BUILD_NUMBER}"
     }
 
     agent {
@@ -60,13 +60,13 @@ spec:
         }        
          stage('buildear imagen') {
             steps {
-                sh "docker build -t martooo/web-de-martin ."
+                sh "docker build -t martooo/$APP_NAME:$APP_TAG ."
             }
         }
         stage('docker push') {
             steps {
                 sh "docker login -u martooo -p arquitectura123"
-                sh "docker push martooo/web-de-martin "
+                sh "docker push martooo/$APP_NAME:$APP_TAG "
                 
             }
         }
