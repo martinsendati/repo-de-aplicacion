@@ -3,6 +3,8 @@ pipeline {
     environment {
         APP_NAME = "web-de-martin"
         APP_TAG = "${BUILD_NUMBER}"
+        REGISTRY = "martooo"
+        PASS = "arquitectura123"
     }
 
     agent {
@@ -60,13 +62,13 @@ spec:
         }        
          stage('buildear imagen') {
             steps {
-                sh "docker build -t martooo/$APP_NAME:$APP_TAG ."
+                sh "docker build -t $REGISTRY/$APP_NAME:$APP_TAG ."
             }
         }
         stage('docker push') {
             steps {
-                sh "docker login -u martooo -p arquitectura123"
-                sh "docker push martooo/$APP_NAME:$APP_TAG "
+                sh "docker login -u $REGISTRY -p $PASS"
+                sh "docker push $REGISTRY/$APP_NAME:$APP_TAG "
                 
             }
         }
