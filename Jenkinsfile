@@ -67,7 +67,7 @@ spec:
         }
         stage('docker push') {
             steps {
-                sh "docker login -u $REGISTRY -p $PASS"
+                sh "docker login -u $REGISTRY -p arquitectura123"
                 sh "docker push $REGISTRY/$APP_NAME:$APP_TAG "
                 
             }
@@ -79,4 +79,3 @@ spec:
        
 
     }
-}
